@@ -10,7 +10,7 @@ namespace FIleAnalzer
     {
         public static bool IsTextFile(this FileInfo fileInfo) 
         {
-            if (fileInfo.Extension == " txt")
+            if (fileInfo.Extension == ".txt")
             {
                 return true;
             }

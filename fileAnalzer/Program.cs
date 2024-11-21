@@ -18,15 +18,33 @@ namespace FIleAnalzer
              }
 
            var filenams = directoryInfo.GetFiles();
+            IFileAnalyzer fileAnalzer = null;
+
             foreach (var file in filenams)
             {
-                IFileAnalyzer fileAnalzer = null;
+
                 if (file.IsTextFile()) 
                 {
                     fileAnalzer = new TextFileAnalyzer();
-                }
 
+                    fileAnalzer.AnalyzeFile(file);
+
+                    var results = ((FileAnalyzer)fileAnalzer).GetResulte();
+
+                    Console.WriteLine($"File Name : {file.Name}");
+                    Console.WriteLine($"Word Count : {results.WordCount}");
+                    Console.WriteLine($"Line Count : {results.LineCount}");
+                     Console.WriteLine($"charcter Count : {results.CharachterCount}");
+                }
+                else if (true)
+                {
+                    Console.WriteLine();
+                }
+                {
+                    
+                }
             }
+              
         }
     }
 }
