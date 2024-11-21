@@ -10,7 +10,8 @@ namespace fileAnalzer
     {
         public void AnalyzeFile(FileInfo fileInfo)
         {
-            throw new NotImplementedException();
+            string[] FileString = File.ReadAllLines(fileInfo.FullName);
+            AnalysisResulte resulte = new AnalysisResulte();
         }
     }
 }

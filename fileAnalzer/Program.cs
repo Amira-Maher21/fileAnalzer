@@ -36,10 +36,18 @@ namespace FIleAnalzer
                     Console.WriteLine($"Line Count : {results.LineCount}");
                      Console.WriteLine($"charcter Count : {results.CharachterCount}");
                 }
-                else if (true)
+               else if (file.IscsvFile()) 
                 {
-                    Console.WriteLine();
-                }
+                    fileAnalzer = new CSVFileAnalyzer();
+
+                    fileAnalzer.AnalyzeFile(file);
+
+                    var results = ((FileAnalyzer)fileAnalzer).GetResulte();
+
+                    Console.WriteLine($"File Name : {file.Name}");
+                    Console.WriteLine($"Field Count : {results.FieldCount}");
+                 }
+                 
                 {
                     
                 }
